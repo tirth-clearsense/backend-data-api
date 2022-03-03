@@ -8,9 +8,9 @@ config_object = ConfigParser()
 config_object.read("config.ini")
 database = config_object["CREDENTIALS_DATABASE"]
 
-engine = create_engine("postgresql://{username}:{password}@{dbhost}/{dbname}".format(username=database['USERNAME'], password=database['PASSWORD'],
-                                                                                                        dbhost=database['HOST'], dbname=database['NAME']))
-# engine = create_engine("postgresql://tirth:password@localhost/personicletest")
+# engine = create_engine("postgresql://{username}:{password}@{dbhost}/{dbname}".format(username=database['USERNAME'], password=database['PASSWORD'],
+#                                                                                                         dbhost=database['HOST'], dbname=database['NAME']))
+engine = create_engine("postgresql://tirth:password@localhost/personicletest")
 
 Base = declarative_base(engine)
 Base.metadata.reflect(engine)
